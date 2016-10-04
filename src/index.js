@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import uuid from 'uuid';
 import Fresh8 from 'fresh8';
 
-class Fresh8Compontent extends Component {
+class Fresh8Component extends Component {
   constructor (props) {
     super(props);
     this.state = { adClassName: 'f8' };
@@ -69,4 +69,4 @@ Fresh8Compontent.propTypes = {
   competitions: PropTypes.array
 };
 
-export default Fresh8Compontent;
+export default Fresh8Component;
