@@ -18,6 +18,8 @@ class Fresh8Component extends Component {
         inApp: this.props.shouldBreakOut,
         endpoint: this.props.endpoint
       });
+
+      window.fresh8 = this.fresh8;
     }
 
     this.setState({ 'adClassName': 'f8-' + uuid.v4() }, () => {
