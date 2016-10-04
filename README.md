@@ -83,13 +83,6 @@ An optional sport value used for targeting overrides, for example `cricket`.
 |---------|---------|----------|---------|
 | `sport` | String  | X        | `''`    |
 
-#### `match`
-An optional match name used for targeting overrides, for example `Manchester United vs Southampton`.
-
-| Key       | Value   | Required | Default |
-|---------- |---------|----------|---------|
-| `match` | String    | X       | `''`    |
-
 #### `matchID`
 An optional [Opta](http://www.optasports.com/) ID used for targeting overrides.
 *Note: Opta ID's are only supported for football currently.*
