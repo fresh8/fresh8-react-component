@@ -11,7 +11,7 @@ import Fresh8ReactComponent from 'fresh8-react-component/src';
 
 ## Getting started  
 - `npm install fresh8-react-component --save`
-- `import Fresh8ReactComponent from 'fresh8ReactComponent';`
+- `import Fresh8ReactComponent from 'fresh8-react-component';`
 
 ## Installation ID's and Slot ID's
 During your on-boarding process you'll receive a unique set of ID's for the publications, websites and applications you want to display ads on. We refer to these as "installation ID's", each ID is unique to the publication and allows you to control the ads via our console. Along with these you'll also receive a set of slot ID's that determine what sizes of ad creative will be served to your publications, you can see a list of available slots [here](https://console.fresh8.co/ad-slots).
