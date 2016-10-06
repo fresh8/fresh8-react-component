@@ -14,9 +14,9 @@ var _uuid = require('uuid');
 
 var _uuid2 = _interopRequireDefault(_uuid);
 
-var _fresh = require('fresh8');
+var _fresh8JsModule = require('fresh8-js-module');
 
-var _fresh2 = _interopRequireDefault(_fresh);
+var _fresh8JsModule2 = _interopRequireDefault(_fresh8JsModule);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -46,7 +46,7 @@ var Fresh8Component = function (_Component) {
       if (window.fresh8) {
         this.fresh8 = window.fresh8;
       } else {
-        this.fresh8 = new _fresh2.default({
+        this.fresh8 = new _fresh8JsModule2.default({
           instID: this.props.instID,
           shouldBreakOut: this.props.shouldBreakOut,
           inApp: this.props.shouldBreakOut,
@@ -89,22 +89,5 @@ var Fresh8Component = function (_Component) {
 
   return Fresh8Component;
 }(_react.Component);
-
-Fresh8Compontent.propTypes = {
-  instID: _react.PropTypes.string.isRequired,
-  shouldBreakOut: _react.PropTypes.bool,
-  inApp: _react.PropTypes.bool,
-
-  slotID: _react.PropTypes.string.isRequired,
-  url: _react.PropTypes.string,
-  view: _react.PropTypes.string,
-  clickTrackingRedirect: _react.PropTypes.string,
-  sport: _react.PropTypes.string,
-  matchID: _react.PropTypes.string,
-  competitorIDs: _react.PropTypes.array,
-  competitors: _react.PropTypes.array,
-  competitionIDs: _react.PropTypes.array,
-  competitions: _react.PropTypes.array
-};
 
 exports.default = Fresh8Component;

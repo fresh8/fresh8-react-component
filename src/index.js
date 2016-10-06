@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import uuid from 'uuid';
-import Fresh8 from 'fresh8';
+import Fresh8 from 'fresh8-js-module';
 
 class Fresh8Component extends Component {
   constructor (props) {
@@ -52,7 +52,7 @@ class Fresh8Component extends Component {
   }
 }
 
-Fresh8Compontent.propTypes = {
+Fresh8Component.propTypes = {
   instID: PropTypes.string.isRequired,
   shouldBreakOut: PropTypes.bool,
   inApp: PropTypes.bool,
