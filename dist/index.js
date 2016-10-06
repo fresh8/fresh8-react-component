@@ -26,19 +26,19 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Fresh8Compontent = function (_Component) {
-  _inherits(Fresh8Compontent, _Component);
+var Fresh8Component = function (_Component) {
+  _inherits(Fresh8Component, _Component);
 
-  function Fresh8Compontent(props) {
-    _classCallCheck(this, Fresh8Compontent);
+  function Fresh8Component(props) {
+    _classCallCheck(this, Fresh8Component);
 
-    var _this = _possibleConstructorReturn(this, (Fresh8Compontent.__proto__ || Object.getPrototypeOf(Fresh8Compontent)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Fresh8Component.__proto__ || Object.getPrototypeOf(Fresh8Component)).call(this, props));
 
     _this.state = { adClassName: 'f8' };
     return _this;
   }
 
-  _createClass(Fresh8Compontent, [{
+  _createClass(Fresh8Component, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       var _this2 = this;
@@ -52,6 +52,8 @@ var Fresh8Compontent = function (_Component) {
           inApp: this.props.shouldBreakOut,
           endpoint: this.props.endpoint
         });
+
+        window.fresh8 = this.fresh8;
       }
 
       this.setState({ 'adClassName': 'f8-' + _uuid2.default.v4() }, function () {
@@ -63,7 +65,6 @@ var Fresh8Compontent = function (_Component) {
           clickTrackingRedirect: _this2.props.clickTrackingRedirect,
           sport: _this2.props.sport,
           matchID: _this2.props.matchID,
-          match: _this2.props.match,
           competitorIDs: _this2.props.competitorIDs,
           competitors: _this2.props.competitors,
           competitionIDs: _this2.props.competitionIDs,
@@ -86,7 +87,24 @@ var Fresh8Compontent = function (_Component) {
     }
   }]);
 
-  return Fresh8Compontent;
+  return Fresh8Component;
 }(_react.Component);
 
-exports.default = Fresh8Compontent;
+Fresh8Compontent.propTypes = {
+  instID: _react.PropTypes.string.isRequired,
+  shouldBreakOut: _react.PropTypes.bool,
+  inApp: _react.PropTypes.bool,
+
+  slotID: _react.PropTypes.string.isRequired,
+  url: _react.PropTypes.string,
+  view: _react.PropTypes.string,
+  clickTrackingRedirect: _react.PropTypes.string,
+  sport: _react.PropTypes.string,
+  matchID: _react.PropTypes.string,
+  competitorIDs: _react.PropTypes.array,
+  competitors: _react.PropTypes.array,
+  competitionIDs: _react.PropTypes.array,
+  competitions: _react.PropTypes.array
+};
+
+exports.default = Fresh8Component;
