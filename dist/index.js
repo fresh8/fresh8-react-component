@@ -93,22 +93,4 @@ var Fresh8Component = function (_Component) {
   return Fresh8Component;
 }(_react.Component);
 
-Fresh8Component.propTypes = {
-  instID: _react.PropTypes.string.isRequired,
-  shouldBreakOut: _react.PropTypes.bool,
-  inApp: _react.PropTypes.bool,
-
-  slotID: _react.PropTypes.string.isRequired,
-  url: _react.PropTypes.string,
-  view: _react.PropTypes.string,
-  clickTrackingRedirect: _react.PropTypes.string,
-  sport: _react.PropTypes.string,
-  matchID: _react.PropTypes.string,
-  competitorIDs: _react.PropTypes.array,
-  competitors: _react.PropTypes.array,
-  competitionIDs: _react.PropTypes.array,
-  competitions: _react.PropTypes.array,
-  listenOnPushState: _react.PropTypes.bool
-};
-
 exports.default = Fresh8Component;
