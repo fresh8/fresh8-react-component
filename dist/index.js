@@ -50,7 +50,8 @@ var Fresh8Component = function (_Component) {
           instID: this.props.instID,
           shouldBreakOut: this.props.shouldBreakOut,
           inApp: this.props.shouldBreakOut,
-          endpoint: this.props.endpoint
+          endpoint: this.props.endpoint,
+          listenOnPushState: this.props.listenOnPushState
         });
 
         window.fresh8 = this.fresh8;
@@ -69,13 +70,15 @@ var Fresh8Component = function (_Component) {
           competitors: _this2.props.competitors,
           competitionIDs: _this2.props.competitionIDs,
           competitions: _this2.props.competitions
+        }).then(function (ad) {
+          return _this2.setState({ ad: ad });
         });
       });
     }
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      this.fresh8.remove();
+      this.state.ad.destroy();
     }
   }, {
     key: 'render',
@@ -89,5 +92,23 @@ var Fresh8Component = function (_Component) {
 
   return Fresh8Component;
 }(_react.Component);
+
+Fresh8Component.propTypes = {
+  instID: _react.PropTypes.string.isRequired,
+  shouldBreakOut: _react.PropTypes.bool,
+  inApp: _react.PropTypes.bool,
+
+  slotID: _react.PropTypes.string.isRequired,
+  url: _react.PropTypes.string,
+  view: _react.PropTypes.string,
+  clickTrackingRedirect: _react.PropTypes.string,
+  sport: _react.PropTypes.string,
+  matchID: _react.PropTypes.string,
+  competitorIDs: _react.PropTypes.array,
+  competitors: _react.PropTypes.array,
+  competitionIDs: _react.PropTypes.array,
+  competitions: _react.PropTypes.array,
+  listenOnPushState: _react.PropTypes.bool
+};
 
 exports.default = Fresh8Component;
