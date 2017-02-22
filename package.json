@@ -20,9 +20,7 @@
   "homepage": "https://github.com/fresh8/react-component#readme",
   "dependencies": {
     "fresh8-js-module": "^1.1.0",
-    "uuid": "^2.0.3"
-  },
-  "peerDependencies": {
+    "uuid": "^2.0.3",
     "react": "^15.3.2"
   },
   "devDependencies": {
