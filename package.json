@@ -1,6 +1,6 @@
 {
   "name": "fresh8-react-component",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Dynamically inject Fresh8 ads into your website or app using React.",
   "main": "dist/index.js",
   "scripts": {
