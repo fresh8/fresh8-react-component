@@ -50,7 +50,8 @@ var Fresh8Component = function (_Component) {
           instID: this.props.instID,
           shouldBreakOut: this.props.shouldBreakOut,
           inApp: this.props.shouldBreakOut,
-          endpoint: this.props.endpoint
+          endpoint: this.props.endpoint,
+          listenOnPushState: this.props.listenOnPushState
         });
 
         window.fresh8 = this.fresh8;
@@ -69,13 +70,15 @@ var Fresh8Component = function (_Component) {
           competitors: _this2.props.competitors,
           competitionIDs: _this2.props.competitionIDs,
           competitions: _this2.props.competitions
+        }).then(function (ad) {
+          return _this2.setState({ ad: ad });
         });
       });
     }
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      this.fresh8.remove();
+      this.state.ad.destroy();
     }
   }, {
     key: 'render',

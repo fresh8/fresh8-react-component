@@ -16,31 +16,34 @@ class Fresh8Component extends Component {
         instID: this.props.instID,
         shouldBreakOut: this.props.shouldBreakOut,
         inApp: this.props.shouldBreakOut,
-        endpoint: this.props.endpoint
+        endpoint: this.props.endpoint,
+        listenOnPushState: this.props.listenOnPushState
       });
 
       window.fresh8 = this.fresh8;
     }
 
     this.setState({ 'adClassName': 'f8-' + uuid.v4() }, () => {
-      this.fresh8.requestAd({
-        slotID: this.props.slotID,
-        appendPoint: '.' + this.state.adClassName,
-        url: this.props.url,
-        view: this.props.view,
-        clickTrackingRedirect: this.props.clickTrackingRedirect,
-        sport: this.props.sport,
-        matchID: this.props.matchID,
-        competitorIDs: this.props.competitorIDs,
-        competitors: this.props.competitors,
-        competitionIDs: this.props.competitionIDs,
-        competitions: this.props.competitions
-      });
+      this.fresh8
+        .requestAd({
+          slotID: this.props.slotID,
+          appendPoint: '.' + this.state.adClassName,
+          url: this.props.url,
+          view: this.props.view,
+          clickTrackingRedirect: this.props.clickTrackingRedirect,
+          sport: this.props.sport,
+          matchID: this.props.matchID,
+          competitorIDs: this.props.competitorIDs,
+          competitors: this.props.competitors,
+          competitionIDs: this.props.competitionIDs,
+          competitions: this.props.competitions
+        })
+        .then(ad => this.setState({ ad }));
     });
   }
 
   componentWillUnmount () {
-    this.fresh8.remove();
+    this.state.ad.destroy();
   }
 
   render () {
@@ -66,7 +69,8 @@ Fresh8Component.propTypes = {
   competitorIDs: PropTypes.array,
   competitors: PropTypes.array,
   competitionIDs: PropTypes.array,
-  competitions: PropTypes.array
+  competitions: PropTypes.array,
+  listenOnPushState: PropTypes.bool
 };
 
 export default Fresh8Component;

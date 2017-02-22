@@ -19,6 +19,13 @@ During your on-boarding process you'll receive a unique set of ID's for the publ
 ### Usage
 The React component takes all it's configuration as props, below is a list of all the available props.
 
+#### `listenOnPushState`
+Monkey patches the `window.history.pushState` function to emit an event, on receipt of this event the ads will reload. Useful for single page apps that don't reload the page on navigation.
+
+| Key                 | Value   | Required | Default |
+|---------------------|---------|----------|---------|
+| `listenOnPushState` | Boolean | N        | `false` |
+
 #### `shouldBreakOut`
 This controls if the ads should try and break out of iframe's and append to the most top `window`. It does this by looping over all the `window.parent` properties until there are no more or an error is throw because of a browser security exception. This is useful if you want to inject the ads via a third party ad manger that uses iframe's but still want the ads to be displayed in the correct element outside of the iframe.
 
