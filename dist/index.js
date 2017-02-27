@@ -72,13 +72,19 @@ var Fresh8Component = function (_Component) {
           competitions: _this2.props.competitions
         }).then(function (ad) {
           return _this2.setState({ ad: ad });
+        }).catch(function (reason) {
+          if (_this2.props.debug) {
+            console.log('F8 ad failed to load - instID: \'' + _this2.props.instID + '\' slotID: \'' + _this2.props.slotID + '\' Error: \'' + reason + '\'');
+          }
         });
       });
     }
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      this.state.ad.destroy();
+      if (this.state.ad) {
+        this.state.ad.destroy();
+      }
     }
   }, {
     key: 'render',

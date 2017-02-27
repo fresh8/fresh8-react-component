@@ -38,12 +38,19 @@ class Fresh8Component extends Component {
           competitionIDs: this.props.competitionIDs,
           competitions: this.props.competitions
         })
-        .then(ad => this.setState({ ad }));
+        .then(ad => this.setState({ ad }))
+        .catch(reason => {
+          if (this.props.debug) {
+            console.log(`F8 ad failed to load - instID: '${this.props.instID}' slotID: '${this.props.slotID}' Error: '${reason}'`);
+          }
+        });
     });
   }
 
   componentWillUnmount () {
-    this.state.ad.destroy();
+    if (this.state.ad) {
+      this.state.ad.destroy();
+    }
   }
 
   render () {
@@ -70,7 +77,8 @@ Fresh8Component.propTypes = {
   competitors: PropTypes.array,
   competitionIDs: PropTypes.array,
   competitions: PropTypes.array,
-  listenOnPushState: PropTypes.bool
+  listenOnPushState: PropTypes.bool,
+  debug: PropTypes.bool
 };
 
 export default Fresh8Component;
