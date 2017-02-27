@@ -39,7 +39,11 @@ class Fresh8Component extends Component {
           competitions: this.props.competitions
         })
         .then(ad => this.setState({ ad }))
-        .catch(reason => console.error(reason));
+        .catch(reason => {
+          if (this.props.debug) {
+            console.log(`F8 ad failed to load - instID: '${this.props.instID}' slotID: '${this.props.slotID}' Error: '${reason}'`);
+          }
+        });
     });
   }
 
@@ -73,7 +77,8 @@ Fresh8Component.propTypes = {
   competitors: PropTypes.array,
   competitionIDs: PropTypes.array,
   competitions: PropTypes.array,
-  listenOnPushState: PropTypes.bool
+  listenOnPushState: PropTypes.bool,
+  debug: PropTypes.bool
 };
 
 export default Fresh8Component;
