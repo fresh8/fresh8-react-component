@@ -72,13 +72,17 @@ var Fresh8Component = function (_Component) {
           competitions: _this2.props.competitions
         }).then(function (ad) {
           return _this2.setState({ ad: ad });
+        }).catch(function (reason) {
+          return console.error(reason);
         });
       });
     }
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      this.state.ad.destroy();
+      if (this.state.ad) {
+        this.state.ad.destroy();
+      }
     }
   }, {
     key: 'render',

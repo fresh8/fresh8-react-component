@@ -38,12 +38,15 @@ class Fresh8Component extends Component {
           competitionIDs: this.props.competitionIDs,
           competitions: this.props.competitions
         })
-        .then(ad => this.setState({ ad }));
+        .then(ad => this.setState({ ad }))
+        .catch(reason => console.error(reason));
     });
   }
 
   componentWillUnmount () {
-    this.state.ad.destroy();
+    if (this.state.ad) {
+      this.state.ad.destroy();
+    }
   }
 
   render () {
