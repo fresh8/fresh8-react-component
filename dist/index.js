@@ -73,7 +73,9 @@ var Fresh8Component = function (_Component) {
         }).then(function (ad) {
           return _this2.setState({ ad: ad });
         }).catch(function (reason) {
-          return console.error(reason);
+          if (_this2.props.debug) {
+            console.log('F8 ad failed to load - instID: \'' + _this2.props.instID + '\' slotID: \'' + _this2.props.slotID + '\' Error: \'' + reason + '\'');
+          }
         });
       });
     }
