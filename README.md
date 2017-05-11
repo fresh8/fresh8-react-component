@@ -1,5 +1,5 @@
 # Fresh8 React Component
-[![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+[![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/) [![npm version](https://badge.fury.io/js/fresh8-react-component.svg)](https://badge.fury.io/js/fresh8-react-component)
 
 Dynamically inject Fresh8 ads into your React app. This project is mostly a React wrapper around the [Fresh8 Javascript Module](https://www.npmjs.com/package/fresh8-js-module).
 
