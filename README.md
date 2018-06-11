@@ -9,7 +9,7 @@ This project is auto compiled from ES2015 to ES5 by Babel, if you'd like to use 
 import Fresh8ReactComponent from 'fresh8-react-component/src';
 ```
 
-## Getting started  
+## Getting started
 - `npm install fresh8-react-component --save`
 - `import Fresh8ReactComponent from 'fresh8-react-component';`
 
@@ -127,6 +127,23 @@ An optional competitions array used for targeting overrides, for example `['Prem
 | Key            | Value | Required | Default |
 |----------------|-------|----------|---------|
 | `competitions` | Array | X        | `[]`    |
+
+
+#### `linkSameWindow`
+
+An optional flag to override link behaviour, making all links open in the same window.
+
+| Key              | Value   | Required | Default |
+|------------------|---------|----------|---------|
+| `linkSameWindow` | Boolean | X        | `false` |
+
+#### `brand`
+
+An optional parameter to pass through the brand identify, sometimes required if you have more than one brand per publication or ad tag. Fresh8 will supply you with this value if needed.
+
+| Key     | Value  | Required | Default     |
+|---------|--------|----------|-------------|
+| `brand` | String | X        | `undefined` |
 
 ## Examples
 This is an example of the simplest configuration possible:
