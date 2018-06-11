@@ -1,6 +1,6 @@
 {
   "name": "fresh8-react-component",
-  "version": "1.1.4",
+  "version": "1.2.0",
   "description": "Dynamically inject Fresh8 ads into your website or app using React.",
   "main": "dist/index.js",
   "scripts": {
@@ -19,9 +19,9 @@
   },
   "homepage": "https://github.com/fresh8/react-component#readme",
   "dependencies": {
-    "fresh8-js-module": "^1.1.5",
-    "uuid": "^2.0.3",
-    "react": "^15.3.2"
+    "fresh8-js-module": "^1.2.0",
+    "react": "^15.3.2",
+    "uuid": "^2.0.3"
   },
   "devDependencies": {
     "babel-cli": "^6.11.4",

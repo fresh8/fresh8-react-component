@@ -36,7 +36,9 @@ class Fresh8Component extends Component {
           competitorIDs: this.props.competitorIDs,
           competitors: this.props.competitors,
           competitionIDs: this.props.competitionIDs,
-          competitions: this.props.competitions
+          competitions: this.props.competitions,
+          linkSameWindow: this.props.linkSameWindow,
+          brand: this.props.brand
         })
         .then(ad => this.setState({ ad }))
         .catch(reason => {
@@ -78,6 +80,8 @@ Fresh8Component.propTypes = {
   competitionIDs: PropTypes.array,
   competitions: PropTypes.array,
   listenOnPushState: PropTypes.bool,
+  linkSameWindow: PropTypes.bool,
+  brand: PropTypes.string,
   debug: PropTypes.bool
 };
 
